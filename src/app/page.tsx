@@ -190,13 +190,21 @@ export default function Home() {
       <footer className="relative z-10 px-6 py-8 border-t border-white/5">
         <div className="mx-auto max-w-6xl flex items-center justify-between text-sm text-white/40">
           <span>Built with care</span>
-          <Link 
-            href="https://github.com/kai-1210" 
-            target="_blank"
-            className="hover:text-white/60 transition-colors"
-          >
-            GitHub
-          </Link>
+          <div className="flex items-center gap-4">
+            <Link href="/privacy" className="hover:text-white/60 transition-colors">
+              Privacy
+            </Link>
+            <Link href="/terms" className="hover:text-white/60 transition-colors">
+              Terms
+            </Link>
+            <Link 
+              href="https://github.com/kai-1210" 
+              target="_blank"
+              className="hover:text-white/60 transition-colors"
+            >
+              GitHub
+            </Link>
+          </div>
         </div>
       </footer>
     </div>
