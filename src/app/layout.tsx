@@ -39,11 +39,20 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://craftkit.tools",
     siteName: "CraftKit",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "CraftKit - Free Tools for Makers",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "CraftKit - Free Tools for Makers",
     description: "Beautiful, free web tools. No signup required.",
+    images: ["/og-image.png"],
   },
 };
 
