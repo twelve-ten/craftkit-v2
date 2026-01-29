@@ -14,13 +14,36 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CraftKit - Free Tools for Makers",
+  metadataBase: new URL("https://craftkit.tools"),
+  title: {
+    default: "CraftKit - Free Tools for Makers",
+    template: "%s | CraftKit",
+  },
   description: "Beautiful, free web tools. Screenshot beautifier, invoice generator, QR codes, privacy policies. No signup required.",
-  keywords: "screenshot tool, invoice generator, QR code maker, privacy policy generator, free tools",
+  keywords: ["screenshot tool", "invoice generator", "QR code maker", "privacy policy generator", "free tools", "maker tools"],
+  authors: [{ name: "CraftKit" }],
+  creator: "CraftKit",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
     title: "CraftKit - Free Tools for Makers",
     description: "Beautiful, free web tools. No signup required.",
     type: "website",
+    url: "https://craftkit.tools",
+    siteName: "CraftKit",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CraftKit - Free Tools for Makers",
+    description: "Beautiful, free web tools. No signup required.",
   },
 };
 
@@ -31,6 +54,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              name: "CraftKit",
+              description: "Beautiful, free web tools for makers. Screenshot beautifier, invoice generator, QR codes, privacy policies.",
+              applicationCategory: "Utility",
+              operatingSystem: "Web",
+              offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+              url: "https://craftkit.tools",
+            }),
+          }}
+        />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
         <Analytics />
